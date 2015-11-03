@@ -28,7 +28,8 @@
     "test",
     "tests",
     "**/_dev",
-    "**/_devassets"
+    "**/_devassets",
+    "**/_assets"
   ],
   "dependencies": {
     "font-awesome": "~4.4.0",
