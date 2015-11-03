@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/quickstep25/template.web.app.base.svg?branch=master)](https://travis-ci.org/quickstep25/template.web.app.base)
 ##<i class="icon-file"></i> Web Application Template - Baseline Model
 This project is built with Node.js and incorporates the usage of a variety of modules and plugins to form an application file / directory structure and process streaming workflow as a starting point for a new web application.
 ###<i class="icon-star"></i> Features
