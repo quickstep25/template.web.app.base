@@ -1,0 +1,31 @@
+//- MIXIN FOR DYNAMIC CSS STYLESHEET LINK USING INLINE JAVASCRIPT
+
+mixin dyn_host_stylesheet(filename)
+	script(type="text/javascript").
+		var href = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port + '/' : '/'),
+			link = document.createElement('link');
+
+			link.type = 'text/css';
+			link.rel = 'stylesheet';
+			link.media = 'all';
+			link.title = 'HTTP Error Page Stylesheet';
+			link.href = href + '#{filename}';
+
+			document.getElementsByTagName('head')[0].appendChild(link);
+	block
+mixin dyn_host_anchor(filename)
+	script(type="text/javascript").
+			var href = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port + '/' : '/'),
+				anchor = document.createElement('a');
+
+				anchor.type = 'text/html';
+				anchor.rel = 'nofollow';
+				anchor.hreflang = 'en';
+				anchor.className = 'btn';
+				anchor.href = href + '#{filename}';
+				anchor.title = 'Return to Application Root';
+				anchor.text = 'Return to Main Page';
+				anchor.role = 'button';
+
+				document.getElementsByTagName('footer')[0].appendChild(anchor);
+	block

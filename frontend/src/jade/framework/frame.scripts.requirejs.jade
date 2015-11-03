@@ -1,0 +1,8 @@
+//- If using require.js AMD module type for application, no other scripts should be used. THE
+//- BUILD SECTION PROVIDES A MARKER FOR GULP-HTML-REPLACE, WHICH REWRITES THE FOLLOWING TAGS TO USE
+//- THE OPTIMIZED JS SCRIPT THAT CONTAINS ONLY REQUIRED MODULES AND MINIMIZES SERVER REQUESTS
+// SCRIPTS - REQUIREJS - CONFIGURATION AND OPTIMIZATION
+// build:optimize_js
+script(type="text/javascript", charset="utf-8", src="./js/application/application.settings.js")
+script(data-main="application/application.startup", type="text/javascript", charset="utf-8", src="./js/modules/require/require.js")
+// endbuild

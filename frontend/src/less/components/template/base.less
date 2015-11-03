@@ -1,0 +1,82 @@
+// BASE ELEMENT CLASSES - SEMANTIC CONSTRAINTS FORCED
+// COMPONENT SPECIFIC STYLES - ALWAYS BEGIN WITH UNIQUE CLASS
+// HAVE A UNIQUE CLASS FOR A COMPONENT IS HANDY. FOR EXAMPLE IT CAN BE
+// USED TO MAKE ALL HEADER ELEMENTS WITH NO MARGIN BUT ONLY FOR THIS COMPONENT
+// WITHOUT THE RISK OF INTERFERRING WITH OTHER STYLES TO HEADER ELEMENTS
+.component-page-template {
+	position: 									relative;
+	width: 										100%;
+	height: 									100%;
+	min-height: 								100%;
+	padding: 									7px;
+
+	.content-box {
+		width: 									100%;
+		min-width: 								300px;
+		max-width: 								460px;
+		margin: 								auto;
+
+		// THE ABSOLUTE AND RESPONSIVE CLASS PAIRS SHOULD GO HAND IN HAND, AND CAN EITHER BE SET IN THE
+		// COMPONENT STYLESHEET OR IN THE CORE APPLICATION STYLESHEET, HOWEVER BY DOING SO IN THE APPLICATION STYLESHEET
+		// WILL CHANGE ALL ELEMENTS WITH THOSE STYLES MAKING THE CLASS NOT REALLY REUSABLE - NOT RECOMMENDED
+		// BEST TO USE  IN THE COMPONENT STYLESHEET SO THE EFFECT IS LOCALIZED
+		// DESIGING FOR MOBILE FIRST AS THE DEFAULT STYLE / LAYOUT, RESPONSIVE / CENTERING SETTINGS DONT REALLY APPLY SINCE APP WILL TAKE UP VIEWPORT
+		&.center-responsive {}
+
+		.content-header {
+			background-color: 					fade(@white, 6%);
+			font-family: 						@font-family-base;
+			font-weight: 						400;
+			
+			border-radius: 						@border-radius-base;
+			.box-shadow							(inset 0 0 3px fade(@white, 75%));
+
+				h1, h2, h3, h4, h5, h6 {
+					margin: 					0;
+					margin-bottom: 				12px;
+				}
+
+				p {
+					line-height: 				24px;
+				}
+
+			.header-box {
+
+			}
+			.title {
+				font-size: 						1.75em;
+				font-weight: 					200;
+				font-family: 					@font-family-headings;
+				color:							@headings-title-color;
+				word-spacing: 					3px;
+				letter-spacing: 				1px;
+			}
+			.subtitle {
+				margin: 						0;
+				position: 						relative;
+				top: 							-12px;
+				letter-spacing: 				2px;
+				font-size: 						.95em;
+				color:							@headings-subtitle-color;
+			}
+			.promo {
+				margin:							0;
+				color:							@headings-promo-color;
+			}
+		}
+		.content-body {
+			background-color: 					fade(@white, 2%);
+			font-family: 						@font-family-base;
+			font-weight: 						400;
+			border-radius: 						@border-radius-base;
+			.box-shadow							(inset 0 0 3px fade(@white, 75%));
+
+			.body-box {
+
+				p {
+					line-height: 				26px;
+				}
+			}
+		}
+	}
+}

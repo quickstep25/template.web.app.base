@@ -1,0 +1,198 @@
+//	NORMALIZE STYLING BEFORE CUSTOM STYLING
+//	This normalization should take place before ANY other styles have been included on the page.
+//	Original source code is written only in CSS, this is a conversion to LESS for application consistency
+//	Credit: Inspriation for this stylesheet is based off "normalize.css": github.com/necolas/normalize.css
+
+
+html {
+	//	DEFAULT FONT RESET
+	font-family: 							sans-serif;
+	//	PREVENT IOS AND IE FROM ADJUSTING TEXT SIZE ON ORIENTATION CHANGE
+	-ms-text-size-adjust: 					100%;
+	-webkit-text-size-adjust: 				100%;
+	.box-sizing								(border-box);
+}
+
+// NORMALIZE CONTAINERS FOR CALCULATION CONSISTENCIES
+*, *:before, *:after {
+	.box-sizing								(inherit);
+}
+
+body {
+	//	REMOVE ANY MARGINS AND PADING
+	margin: 								0;
+	padding: 								0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+	//	CORRECT ANY 'BLOCK' ELEMENTS IN IE
+	display: 								block;
+}
+audio, canvas, progress, video {
+	//	CORRECT ANY 'INLINE-BLOCK' ELEMENTS IN IE AND NORMALIZE VERTICAL ALIGNMENTS FOR ALL BROWSERS
+	display: 								inline-block;
+	vertical-align: 						baseline;
+}
+audio:not([controls]) {
+	//	PREVENT MODERN BROSWERS FROM DISPLAYING AUDIO ELEMENTS WITH NO CONTROLS
+	display: 								none;
+	height: 								0;
+}
+[hidden], template {
+	//	CORRECT HIDDEN ATTRIBUTE IN IE AND TEMPLATE ELEMENT IN SAFARI FIREFOX IE.
+	display: 								none;
+}
+a {
+	//	REMOVE GRAY BACKGROUND FOR ACTIVE LINKS IN IE
+	background-color: 						transparent;
+	//	IMPROVE READABILITY FOR LINKS
+	outline: 								none;
+	&:hover, &:focus, &:active, &:visited, &:link {
+		outline: 							none;
+	}
+}
+abbr[title] {
+	// CORRECT MISSING SYTLES IN IE SAFARI CHROME
+	border-bottom: 							1px dotted;
+}
+b, strong {
+	//	CORRECT MISSING STYLE IN FIREFOX SAFARI CHROME
+	font-weight: 							bold;
+}
+dfn {
+	// CORRECT MISSING STYLE IN SAFARI CHROME
+	font-style: 							italic;
+}
+h1 {
+	// ADDRESS H1 ELEMENT FONT SIZE WITHIN ARTICLE AND SECTION ELEMENTS FOR FIREFOX, SAFARI, CHROME
+	font-size: 								2em;
+	margin: 								0.67em 0;
+}
+mark {
+	// CORRECT MISSING SYTLES IN IE
+	background: 							#7DF9FF;
+	color: 									#000000;
+}
+small {
+	// CORRECT CONSISTENCY IN ALL BROWSERS
+	font-size: 								80%;
+}
+sub, sup {
+	// CORRECT CONSISTENCY IN ALL BROWSERS
+	font-size: 								75%;
+	line-height: 							0;
+	position: 								relative;
+	vertical-align: 						baseline;
+}
+sub {
+	// CORRECT CONSISTENCY IN ALL BROWSERS
+	bottom: 								-0.25em;
+}
+sup {
+	// CORRECT CONSISTENCY IN ALL BROWSERS
+	top: 									-0.5em;
+}
+img {
+	// CLEAR IMAGE BORDERS - ESPECIALLY FOR IE
+	border: 								none;
+}
+svg:not(:root) {
+	// CORRECT OVERFLOW NOT HIDDEN IN IE
+	overflow: 								hidden;
+}
+figure {
+	// ADDRESS MISSING MARGINS FOR IE
+	margin: 								1em 40px;
+}
+hr {
+	// CONSISTENCY ACROSS BROWSERS
+	box-sizing: 							content-box;
+	height: 								0;
+}
+pre {
+	// CONSISTENCY ACROSS BROWSERS
+	overflow: 								auto;
+}
+code, kbd, pre, samp, dfn {
+	// CONSISTENCY ACROSS BROWSERS
+	font-family: 							monospace, monospace;
+	font-size: 								1em;
+}
+button, input, optgroup, select, textarea {
+	// CONSISTENCY ACROSS BROWSERS
+	color: 									inherit;
+	font: 									inherit;
+	margin: 								0;
+}
+button {
+	// CORRECT IE FROM HIDING CONTENT OVERFLOW
+	overflow: 								visible;
+}
+button, select {
+	// CONSISTENCY ACROSS BROWSERS
+	text-transform: 						none;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	// PREVENT CONTROL DESTRUCTION
+	cursor: 								pointer;
+	-webkit-appearance: 					button;
+}
+button[disabled], html input[disabled] {
+	// RESET CURSOR FOR DISABLED
+	cursor: 								default;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+	// REMOVE FIREFOX PADDING
+	border: 								none;
+	padding: 								0;
+}
+input {
+	// NORMALIZE LINE-HEIGHT
+	line-height: 							normal;
+}
+input[type="checkbox"], input[type="radio"] {
+	// FIREFOX ISSUE FIX
+	box-sizing: 							border-box;
+	padding: 								0;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+	// CHROME CURSOR FIX FOR INCREMENT/DECREMENT BUTTONS
+	height: 								auto;
+}
+input[type="search"] {
+	// CHROME AND SAFARI APPEARANCE AND BOX SIZING
+	-webkit-appearance: 					textfield;
+	box-sizing: 							content-box;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+	// SAFARI AND CHROME CLIPPING ISSUE
+	-webkit-appearance: 					none;
+}
+fieldset {
+	// BROWSER CONSISTANCY
+	border: 								1px solid #C0C0C0;
+	margin: 								0 2px;
+	padding: 								0.35em 0.625em 0.75em;
+}
+legend {
+	// IE COLOR CORRECTION
+	border: 								none;
+	padding: 								0;
+}
+textarea {
+	// IE SCROLLBAR ISSUE
+	overflow: 								auto;
+}
+optgroup {
+	// BROWSER CONSISTENCY
+	font-weight: 							bold;
+}
+table {
+	// BROWSER CONSISTENCY
+	border-collapse: 						collapse;
+	border-spacing: 						0;
+}
+td, th {
+	// BROWSER CONSISTENCY
+	padding: 								0;
+}
+

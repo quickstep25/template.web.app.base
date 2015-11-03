@@ -1,0 +1,12 @@
+// META - APPLICATION INFORMATION
+//- "application-name" must be a short free-form string giving the name of the application that the page represents. If the page is not a Web application, the application-name metadata name must not be used. There must not be more than one meta element with its name attribute set to the value application-name per document. Browsers/user agents may use the application name in UI in preference to the page's title, since the title might include status messages and the like relevant to the status of the page at a particular moment in time instead of just being the name of the application.
+meta(name="application-name", content="APPLICATION_NAME")
+//- "description" is a free-form string that describes the page. The value must be appropriate for use in a directory of pages, e.g. in a search engine. There must not be more than one meta element with its name attribute set to the value description per document.
+meta(name="description", content="APPLICATION_DESCRIPTION")
+//- "keywords" must the a set of comma seperated values relevant to the page content
+meta(name="keywords", content="APPLICATION_KEYWORDS")
+//- "author" must be a free-form string specifying the content author. A link element should point to the location of the author(s), usually defined in humans.txt file
+meta(name="author", content="APPLICATION_AUTHOR")
+link(rel="author", href="humans.txt", hreflang="en")
+//- "license" information location.  Should point to a file containing specific license information for a variety of open source development licenses.
+link(rel="license", href="license.txt", hreflang="en")

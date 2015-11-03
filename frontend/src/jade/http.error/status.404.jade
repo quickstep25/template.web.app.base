@@ -1,0 +1,43 @@
+extends ../index/index.jade 
+
+//-block META-CHARSET
+block TITLE
+	title HTTP ERROR - 404
+block META-HEADER
+block META-NAME
+//-block META-MOBILE-ALL
+//-block META-MOBILE-APPLE
+block STYLES-BOOTSTRAP
+block STYLES-PLUGINS
+block STYLES-APPLICATION
+	// DYNAMICALLY GENERATE STYLESHEET REFERENCE
+	+dyn_host_stylesheet('css/application.http.error.styles.css')
+block FONTS-ICONS
+	// FONTS - ICONS-FAVICONS
+	// FONTAWESOME IS INCLUDED IN THE APPLICATION.STYLES STYLESHEET
+block FONTS-GOOGLE
+	// FONTS - LATO
+	link(href="http://fonts.googleapis.com/css?family=Lato:100,300,400", rel="stylesheet", media="all", type="text/css")
+block ICONS-FAVICONS
+block APPLICATION
+	// WRAPPER - APPLICATION / PAGE
+	.wrapper-application
+		block APPLICATION-NAVIGATION
+		block APPLICATION-CONTENT
+			.wrapper-application-content
+				.wrapper-component
+					.content-box.center-responsive
+						.icon 
+							i.fa.fa-unlink
+						.status Error Code: 404
+						p.message The requested file was not found or no longer exists.
+						footer
+	+dyn_host_anchor()
+block SCRIPTS-REQUIREJS
+block SCRIPTS-JQUERY
+block SCRIPTS-KNOCKOUT
+block SCRIPTS-BOOTSTRAP
+block SCRIPTS-VELOCITY
+block SCRIPTS-PLUGINS
+block SCRIPTS-APPLICATION
+block SCRIPTS-TRACKER

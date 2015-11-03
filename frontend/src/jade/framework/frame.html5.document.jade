@@ -1,0 +1,57 @@
+//- This template is not meant to be exported and processed directly. It is merely a template to be used by EXTEND jade command.
+
+doctype html
+html.no-js(lang="en")
+	head
+		block META-CHARSET
+			include ./frame.meta.charset.jade
+		block TITLE
+			title SET_APPLICATION_TITLE
+		block META-HEADER
+			include ./frame.meta.header.jade
+		block META-NAME
+			include ./frame.meta.name.jade
+		block META-MOBILE-ALL
+			include ./frame.meta.mobile.all.jade
+		block META-MOBILE-APPLE
+			include ./frame.meta.mobile.apple.jade
+
+		block STYLES-BOOTSTRAP
+			include ./frame.styles.bootstrap.jade
+		block STYLES-PLUGINS
+		block STYLES-APPLICATION
+
+		block FONTS-ICONS
+			include ./frame.fonts.icons.fontawesome.jade
+		block FONTS-GOOGLE
+			include ./frame.fonts.google.jade
+
+		block ICONS-FAVICONS
+			include ./frame.favicons.jade
+
+	body
+		block APPLICATION
+			// WRAPPER - APPLICATION / PAGE
+			.wrapper-application
+			block APPLICATION-NAVIGATION
+				// WRAPPER - APPLICATION NAVIGATION
+				.wrapper-application-navigation
+			block APPLICATION-CONTENT
+				// WRAPPER - APPLICATION CONTENT
+				.wrapper-application-content
+
+		//- IMPORTANT: If this application is to be setup as an AMD module type application using require.js then only use the script section SCRIPTS-REQUIREJS by block jade sections in the index.jade file	
+		block SCRIPTS-REQUIREJS
+			include ./frame.scripts.requirejs.jade
+		block SCRIPTS-JQUERY
+			include ./frame.scripts.jquery.jade
+		block SCRIPTS-KNOCKOUT
+			include ./frame.scripts.knockout.jade
+		block SCRIPTS-BOOTSTRAP
+			include ./frame.scripts.bootstrap.jade
+		block SCRIPTS-VELOCITY
+			include ./frame.scripts.velocity.jade
+		block SCRIPTS-PLUGINS
+		block SCRIPTS-APPLICATION
+		block SCRIPTS-TRACKER
+			include ./frame.scripts.google.analytics.jade

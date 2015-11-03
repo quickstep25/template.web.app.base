@@ -1,0 +1,30 @@
+# CONSISTENT CODING FORMAT METHODS FOR SUPPORTED EDITING SOFTWARE.  REFERENCE: www.editorconfig.org
+root = true
+
+[*]
+indent_style = tab
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{html,htm,cfm,cfml,php}]
+indent_style = tab
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.jade]
+indent_style = tab
+indent_size = 4
+trim_trailing_whitespace = false
+insert_final_newline = false
+
+[*.js]
+indent_style = tab
+indent_size = 4
+indent_brace_style = 1TBS
+spaces_around_brackets = outside
+curly_bracket_next_line = true

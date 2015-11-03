@@ -1,0 +1,42 @@
+// BOX SHADOW
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+// SIMPLE LONG SHADOW
+.long-shadow-simple(@type, @size, @color, @depth: 10%, @fade: 0%) {
+	.for(@size); .-each(@i) {
+		@x: 1px * @i;
+		@y: 1px * @i;
+		@a: pow(1 - (@i - 1) / @size, .02 * @fade);
+		@c: darken(@color, @depth * @a);
+		
+					@{type}-shadow+: @x @y @c;
+		-webkit-@{type}-box-shadow+: @x @y @c;
+		   -moz-@{type}-box-shadow+: @x @y @c;
+	}
+}
+// LONG-SHADOW
+.long-shadow(@type, @color, @length, @fadeout: true, @scew: false, @direction: right) {
+		.-() {
+			@dir:       1px;
+			@offset:    0;
+			@s:         .5px * @i;
+			@a:         1 - @i / @length;
+			@c:         fade(@color, 100% * alpha(@color) * @a * @a);
+		}
+			.-() when (@direction = left) {@dir: -1px}
+			.-() when (@type = box)       {@offset: 1}
+			.-() when (@scew = false)     {@s: ;}
+			.-() when (@type = text)      {@s: ;}
+			.-() when (@fadeout = false)  {@c: @color}
+
+	.for(0, @length - 1); .-each(@i) {
+		.-();
+								 @x: @dir * (@i + @offset);
+								 @y: 1px  * (@i + @offset);
+							@{type}-shadow+: @x @y 0 @s @c;
+				-webkit-@{type}-box-shadow+: @x @y 0 @s @c;
+				   -moz-@{type}-box-shadow+: @x @y 0 @s @c;
+	}
+}

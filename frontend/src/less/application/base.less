@@ -1,0 +1,97 @@
+// ENSURE FULL HEIGHT TO START OUT
+html, body, .wrapper-application, .wrapper-application-navigation, .wrapper-application-content, .wrapper-component {
+	height: 									100%;
+	min-height: 								100%;
+	max-height: 								100%;
+}
+// BASE CLASSES
+html, body, .wrapper-application {
+	margin:										0;
+	padding: 									0;
+	min-width: 									100%;
+	width:										100%;
+	max-width:									100%;
+	overflow: 									auto;
+	-webkit-tap-highlight-color: 				rgba(0,0,0,0);
+}
+
+body {
+	font-family: 								@font-family-base;
+	font-size: 									@font-size-base;
+	font-weight: 								normal;
+	color: 										@body-color;
+	background-color: 							@body-bg;
+}
+// APPLICATION INDEX CLASSES
+.wrapper-application {
+	min-width: 									100%;
+	display: 									block;
+	#application-gradients > .triangular-monochrome(@color: @swatch-shadow);
+
+	.wrapper-application-navigation {
+		min-width: 								100%;
+		display: 								block;
+	}
+
+	.wrapper-application-content {
+		min-width: 								100%;
+		display: 								block;
+	}
+}
+// COMPONENT BINDING TAG STYLES
+.wrapper-component {
+	padding: 									0;
+	margin: 									0;
+	// COMPONENTS THAT ARE ALSO PAGES
+	&.page {
+		margin: 								auto;
+	}
+	// JUST FOR THE COMPONENT BINDER
+	&.binder {
+	}
+	// BASE ELEMENTS FOR EACH COMPONENT
+	> section {
+		display: 								block;
+		margin: 								auto;
+		padding: 								7px;
+		.component-content {
+			header {
+				color: 							@headings-color;
+				display: 						block;
+				padding: 						24px 16px 24px 12px;
+				margin-bottom: 					12px;
+				background-color: 				@white;
+
+				h1, h2, h3, h4, h5, h6 {
+					font-weight: 				300;
+				}
+			}
+			article {
+				color: 							@article-color;
+				display: 						block;
+				padding: 						24px 16px 24px 12px;
+				margin-top: 					12px;
+				background-color: 				@white;
+				.dropcap {
+					float: 						left;
+					font-size: 					3em;
+					padding: 					8px 18px 0 3px;
+					line-height: 				34px;
+					color: 						@headings-title-color;
+					font-family: 				@font-family-headings;
+					font-weight: 				200;
+				}
+				hr.divider {
+					border: 					0;
+					height: 					0;
+					border-top: 				1px solid fade(#000000, 10%);
+					border-bottom: 				1px solid fade(@white, 20%);
+				}
+			}
+		}
+	}
+}
+// HIDE ALL CONTENT FROM DISPLAYING UNTIL ASSIGNED BY KNOCKOUT COMPONENTS
+:unresolved {
+	opacity: 									0;
+}

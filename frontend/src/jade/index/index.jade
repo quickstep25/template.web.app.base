@@ -1,0 +1,45 @@
+//- Core entry web template and default web server document: index.html
+//- Application is designed as single page application - meaning there is only one page served and all other content request are handled via ajax.
+//- Structure and document layout is modeled and extended from the framework directory, modifications are altered through BLOCK sections.
+//- Framework should not be modified, instead use the BLOCK sections to customize application document structure and layout. BLOCK sections that are not commented out are over-writing what is defined in the relative block section in the EXTENDED model
+
+//- EXTEND DEFAULT FRAMEWORK FOR HTML5 DOCUMENT
+extends ../framework/frame.html5.document.jade
+//- PULL IN MIXINS
+include ../mixins/mixins.jade
+//- UNCOMMENT SECTIONS TO HIDE THE BLOCK AND USE THE DEFAULT TEMPLATE
+//-block META-CHARSET
+block TITLE
+	title SET_APPLICATION_TITLE
+//-block META-HEADER
+//-block META-NAME
+//-block META-MOBILE-ALL
+//-block META-MOBILE-APPLE
+block STYLES-BOOTSTRAP
+block STYLES-PLUGINS
+block STYLES-APPLICATION
+	link(href="./css/application.styles.css", rel="stylesheet", media="all", type="text/css")
+block FONTS-ICONS
+	// FONTS - ICONS-FAVICONS
+	// FONTAWESOME IS INCLUDED IN THE APPLICATION.STYLES STYLESHEET
+block FONTS-GOOGLE
+	// FONTS - GOOGLE
+	link(href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200%7COxygen:400,300", rel="stylesheet", type="text/css", media="all")
+//-block ICONS-FAVICONS
+block APPLICATION
+	// WRAPPER - APPLICATION / PAGE
+	.wrapper-application
+		block APPLICATION-NAVIGATION
+		block APPLICATION-CONTENT
+			// WRAPPER - APPLICATION CONTENT
+			.wrapper-application-content
+				// PAGE COMPONENT
+				.wrapper-component.binder.page(data-bind="component: { name: route().page, params: route }")
+//-block SCRIPTS-REQUIREJS
+block SCRIPTS-JQUERY
+block SCRIPTS-KNOCKOUT
+block SCRIPTS-BOOTSTRAP
+block SCRIPTS-VELOCITY
+block SCRIPTS-PLUGINS
+block SCRIPTS-APPLICATION
+block SCRIPTS-TRACKER

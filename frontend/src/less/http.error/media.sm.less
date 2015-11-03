@@ -1,0 +1,48 @@
+// SMALL SCREEN
+@media (min-width: @screen-sm-min) {
+	.wrapper-application {
+		.wrapper-application-navigation {
+		}
+		.wrapper-application-content {
+
+			.wrapper-component {
+
+				.content-box {
+					max-width: 								660px;
+
+					&.center-responsive {
+					}
+
+					.icon {
+						text-align: 						center;
+
+						i {
+							font-size: 						8em;
+							.long-shadow-simple				(text, 200, @http-error-bg, @depth: 5%, @fade: 100%);
+						}
+					}
+					.status {
+						font-size: 							2.7em;
+						font-weight: 						100;
+						margin:								3em auto 0 auto;
+					}
+					.message {
+						font-size: 							1.2em;
+						font-weight: 						200;
+					}
+					footer {
+						margin:								auto;
+						margin-top: 						9em;
+
+						.btn {
+							font-size: 						1em;
+
+							&:hover, &:focus {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+//- FAVICONS
+//- VARS
+- var apple_attributes = { "rel": "apple-touch-icon", "type": "image/png" };
+- var android_attributes = { "rel": "icon", "type": "image/png" };
+- var favicon_attributes = { "rel": "icon", "type": "image/x-icon" };
+//- DEVICE MIXINS
+mixin favicons_ie(path, ...sizes)
+	meta(name="msapplication-TileColor", content="#FFFFFF")
+	meta(name='msapplication-wide310x150logo', content=path + 'mstile-wide-310x150.png')
+	each size in sizes
+		meta(name='msapplication-square' + size + 'x' + size + 'logo', content=path + 'mstile-' + size + 'x' + size + '.png')
+		block
+//- MIXIN - FAVICONS
+mixin favicons(path, ...sizes)
+	link(rel='shortcut icon', type='image/x-icon', href=path + 'favicon.ico')
+	link(rel='icon', type='image/x-icon', href=path + 'favicon.ico', sizes='16x16 32x32')
+	block
+//- MIXIN - CHROME ANDROID ICONS
+mixin favicons_android(path, ...sizes)
+	each size in sizes
+		link(rel='icon', type='image/png', href=path + 'android-chrome-icon-' + size + 'x' + size + '.png', sizes=size + 'x' + size)
+//- MIXIN - APPLE DEFAULT ICONS
+mixin favicons_apple(path, ...sizes)
+	each size in sizes
+		link(rel='apple-touch-icon-precomposed', type='image/png', href=path + 'apple-touch-icon-precomposed-' + size + 'x' + size + '.png', sizes=size + 'x' + size)

@@ -1,0 +1,81 @@
+# COMPILED SOURCE FILES #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# PACKAGED AND COMPRESSED FILES #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# BINARY FILES #
+######################
+*.psd
+*.ai
+*.epo
+*.eps
+*.mp4
+*.mov
+*.mp3
+
+# LOG FILES #
+######################
+*.log
+
+# OS GENERATED FILES #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon
+
+# NODE MODULES #
+######################
+**/node_modules
+
+# BOWER MODULES #
+######################
+**/bower_components
+**/bower_modules
+
+# DREAMWEAVER #
+######################
+**/_notes
+
+# CODEKIT 2 #
+######################
+**.codekit-cache
+
+# SUBLIME TEXT - PROJECT SETTINGS #
+######################
+**.sublime-project
+**.sublime-workspace
+
+# HOSTING WEB SERVER CONFIGURATION #
+######################
+**web.config
+
+# DEVELOPMENT ASSETS #
+######################
+**/_dev
+**/_devassets
+**/_dev_assets
+**/_assets
+
+# GOOGLE ANALYTICS AND WEB SERVER ADMINISTRATION FILES #
+#####################
+**google*.html
