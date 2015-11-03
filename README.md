@@ -7,6 +7,9 @@
 
 ##<i class="icon-file"></i> Web Application Template - Baseline Model
 This project is built with Node.js and incorporates the usage of a variety of modules and plugins to form an application file / directory structure and process streaming workflow as a starting point for a new web application.
+
+For a quick demonstration, view this [production build-out](http://quickstep25.github.io/template.web.app.base/) (minified code).
+
 ###<i class="icon-star"></i> Features
 This template model is designed with the ideal that tightly coupled, change resistant, brittle code causes all sorts of long-term maintenance issues that ultimately result in adverse client satisfaction when software is deployed and  delivered. A clean separation between application logic and the UI will make an application easier to test, maintain, and evolve. It improves code re-use opportunities and enables the developer-designer workflow as well as the implementation of re-usable components.
 
