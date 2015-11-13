@@ -42,6 +42,8 @@
 ehthumbs.db
 Thumbs.db
 Icon?
+Icon*
+icon.png
 
 # NODE MODULES #
 ######################
