@@ -2245,7 +2245,11 @@ body {
   min-width: 100%;
   display: block;
   background-color: transparent;
-  background-image: linear-gradient(148deg, #5a6077, transparent), linear-gradient(205deg, #2E313D, transparent), linear-gradient(50deg, #1c1e26, transparent);
+  background-image: linear-gradient(45deg, #5a6077 0%, transparent 70%), linear-gradient(315deg, #2E313D 10%, transparent 80%), linear-gradient(225deg, #1c1e26 10%, transparent 80%), linear-gradient(135deg, #2E313D 0%, transparent 70%);
+  background-image: -moz-linear-gradient(45deg, #5a6077 0%, transparent 70%), -moz-linear-gradient(315deg, #2E313D 10%, transparent 80%), -moz-linear-gradient(225deg, #1c1e26 10%, transparent 80%), -moz-linear-gradient(135deg, #2E313D 0%, transparent 70%);
+  background-image: -ms-linear-gradient(45deg, #5a6077 0%, transparent 70%), -ms-linear-gradient(315deg, #2E313D 10%, transparent 80%), -ms-linear-gradient(225deg, #1c1e26 10%, transparent 80%), -ms-linear-gradient(135deg, #2E313D 0%, transparent 70%);
+  background-image: -webkit-linear-gradient(45deg, #5a6077 0%, transparent 70%), -webkit-linear-gradient(315deg, #2E313D 10%, transparent 80%), -webkit-linear-gradient(225deg, #1c1e26 10%, transparent 80%), -webkit-linear-gradient(135deg, #2E313D 0%, transparent 70%);
+  background-image: -o-linear-gradient(45deg, #5a6077 0%, transparent 70%), -o-linear-gradient(315deg, #2E313D 10%, transparent 80%), -o-linear-gradient(225deg, #1c1e26 10%, transparent 80%), -o-linear-gradient(135deg, #2E313D 0%, transparent 70%);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: screen;
