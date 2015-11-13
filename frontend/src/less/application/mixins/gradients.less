@@ -2,9 +2,28 @@
 #application-gradients {
 	// USAGE: #application-gradients > .mixin_name();
 
-	.triangular-three-color(@color1: #000; @color2: #000; @color3: #000) {
+	.triangular-four-color(@color1: #000; @color2: #000; @color3: #000; @color4: #000) {
 		background-color: 				transparent;
-		background-image: 				linear-gradient(148deg, @color1, transparent), linear-gradient(205deg, @color2, transparent), linear-gradient(50deg, @color3, transparent);
+		background-image: 				linear-gradient(45deg,  @color1  0%, transparent 70%),
+										linear-gradient(315deg, @color2 10%, transparent 80%),
+										linear-gradient(225deg, @color3 10%, transparent 80%),
+										linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		   -moz-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								   -moz-linear-gradient(315deg, @color2 10%, transparent 80%),
+							   	   -moz-linear-gradient(225deg, @color3 10%, transparent 80%),
+								   -moz-linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		    -ms-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								    -ms-linear-gradient(315deg, @color2 10%, transparent 80%),
+							   	    -ms-linear-gradient(225deg, @color3 10%, transparent 80%),
+								    -ms-linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		-webkit-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								-webkit-linear-gradient(315deg, @color2 10%, transparent 80%),
+							    -webkit-linear-gradient(225deg, @color3 10%, transparent 80%),
+								-webkit-linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		     -o-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								     -o-linear-gradient(315deg, @color2 10%, transparent 80%),
+							   	     -o-linear-gradient(225deg, @color3 10%, transparent 80%),
+								     -o-linear-gradient(135deg, @color4  0%, transparent 70%);
 		background-repeat: 				no-repeat;
 		background-size: 				cover;
 		background-blend-mode: 			screen;
@@ -14,11 +33,45 @@
 		@color1: 						lighten(@color, 20%);
 		@color2: 						@color;
 		@color3: 						darken(@color, 8%);
+		@color4: 						@color;
 		background-color: 				transparent;
-		background-image: 				linear-gradient(148deg, @color1, transparent), linear-gradient(205deg, @color2, transparent), linear-gradient(50deg, @color3, transparent);
+		background-image: 				linear-gradient(45deg,  @color1  0%, transparent 70%),
+										linear-gradient(315deg, @color2 10%, transparent 80%),
+										linear-gradient(225deg, @color3 10%, transparent 80%),
+										linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		   -moz-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								   -moz-linear-gradient(315deg, @color2 10%, transparent 80%),
+							   	   -moz-linear-gradient(225deg, @color3 10%, transparent 80%),
+								   -moz-linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		    -ms-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								    -ms-linear-gradient(315deg, @color2 10%, transparent 80%),
+							   	    -ms-linear-gradient(225deg, @color3 10%, transparent 80%),
+								    -ms-linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		-webkit-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								-webkit-linear-gradient(315deg, @color2 10%, transparent 80%),
+							    -webkit-linear-gradient(225deg, @color3 10%, transparent 80%),
+								-webkit-linear-gradient(135deg, @color4  0%, transparent 70%);
+		background-image: 		     -o-linear-gradient(45deg,  @color1  0%, transparent 70%),
+								     -o-linear-gradient(315deg, @color2 10%, transparent 80%),
+							   	     -o-linear-gradient(225deg, @color3 10%, transparent 80%),
+								     -o-linear-gradient(135deg, @color4  0%, transparent 70%);
 		background-repeat: 				no-repeat;
 		background-size: 				cover;
 		background-blend-mode: 			screen;
 	}
+
+    .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+        background:         @start-color;
+        background-image:      -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); 
+        background-image:   -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
+        background-image:       -ms-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
+        background-image:        -o-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
+        background-image:          -webkit-gradient(linear, left top, left bottom, color-stop(@start-percent, @start-color), color-stop(@end-percent, @end-color)); 
+        background-image:           linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent);
+        background-repeat:  repeat-x;
+        zoom:               1 !important;
+        -ms-filter:         e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')",argb(@start-color),argb(@end-color)));    
+        filter:             e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
+    }	
 
 }
