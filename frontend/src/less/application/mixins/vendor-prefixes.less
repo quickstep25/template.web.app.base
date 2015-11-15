@@ -7,7 +7,7 @@
           box-sizing: @boxmodel;
 }
 
-// TRANSITIONS 
+// TRANSITIONS
 .transition(@transition) {
   -webkit-transition: @transition;
        -o-transition: @transition;
@@ -26,5 +26,12 @@
   -webkit-user-select: @arguments;
    -khtml-user-select: @arguments;
      -moz-user-select: @arguments;
-          user-select: @arguments;   
+          user-select: @arguments;
+}
+// OPACITY
+.opacity(@opacity) {
+  opacity: 				@opacity;
+  // IE8
+  @opacity-ie: 			(@opacity * 100);
+  filter: 				~"alpha(opacity=@{opacity-ie})";
 }
