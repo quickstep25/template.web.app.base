@@ -130,7 +130,7 @@ Hence, `pull requests` would probably never take place on this project.
 [Doug A. Hill][DOUG] : [quickstep25][DOUG]
 
 ###<i class="icon-hammer"></i> License
-Copyright &copy; 2013-2015  [DHTS][DHTS] [www.dhtechnicalsolutions.com][DHTS] Doug A. Hill
+Copyright &copy; 2013-2015 |  [DHTS][DHTS] [www.dhtechnicalsolutions.com][DHTS] | [Doug A. Hill][DOUG]
 
 These application software files (the "Software") are licensed under the Open Source [MIT License][MIT] Initiative (the "License"). By using this Software, you agree to the same terms, in the License, expressed by the Software author (the "Author"). Additionally, this Software includes software files supplied by other authors, (the "Third-Party Software"). This Software is providing the Third-Party Software to you by permission of the respective licensors and/or copyright holders on the terms provided by such parties, including those terms required in any Third-Party Software End User License and Agreements. The Author expressly disclaims any warranty, liability or other assurance to you regarding the Third-Party Software.
 
