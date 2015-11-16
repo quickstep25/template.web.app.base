@@ -1,6 +1,6 @@
 {
   "name": "tmp.web.app.base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web Application Template. Baseline minimal responsive web application template.",
   "keywords": [
     "template",
@@ -28,7 +28,7 @@
     "type": "git",
     "url": "https://github.com/quickstep25/template.web.app.base.git"
   },
-  "homepage": "",
+  "homepage": "http://quickstep25.github.io/template.web.app.base/",
   "main": [
     ""
   ],
@@ -57,6 +57,6 @@
   },
   "bugs": {
     "email": "quickstep25@users.noreply.github.com",
-    "url": ""
+    "url": "http://quickstep25.github.io/template.web.app.base/issues"
   }
 }
