@@ -34,7 +34,7 @@
   "dependencies": {
     "font-awesome": "~4.4.0",
     "jquery": "~2.1.4",
-    "knockoutjs": "~3.3.0",
+    "knockoutjs": "~3.4.0",
     "knockout-projections": "~1.1.0",
     "requirejs-domready": "~2.0.1",
     "requirejs-text": "~2.0.14",
