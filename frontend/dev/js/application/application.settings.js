@@ -14,12 +14,18 @@ var require = {
 		'signals'				: 'modules/signals/signals',
 		'text'					: 'modules/require/text',
 		'domready'				: 'modules/require/domReady',
-		'router'				: 'application/application.router'
+		'router'				: 'application/application.router',
+		'google.analytics'		: 'analytics/google.analytics'
 	},
+
 	shim			: {
 		'jquery'		: {
 			exports			: '$'
 		},
+
+		'google.analytics'	: {
+			exports			: 'ga'
+		},		
 
 		'velocity'		: {
 			deps			: ['jquery'],
