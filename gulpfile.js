@@ -54,11 +54,6 @@
 			signals		: ['js-signals/dist/signals.js']
 		};
 
-		// COPY FILE FUNCTION TO BE USED AS CALLBACKS SO THEY WONT INTERFERE WITH GULP.WATCH
-		// copy_assets = function () { return gulp.start('copy_assets'); },
-		// build_assets = function () { return gulp.start('build'); };
-
-
 	//////////////////////////////////////////////////////////////////////////////
 	/// CLEAN - DELETE BUILD FILES AND DIRECTORIES                              //
 	//////////////////////////////////////////////////////////////////////////////
