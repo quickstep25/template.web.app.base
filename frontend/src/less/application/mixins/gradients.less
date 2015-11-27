@@ -62,16 +62,33 @@
 
     .vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
         background:         @start-color;
-        background-image:      -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); 
+        background-image:      -moz-linear-gradient(left, @start-color @start-percent, @end-color @end-percent);
         background-image:   -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
         background-image:       -ms-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
         background-image:        -o-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
-        background-image:          -webkit-gradient(linear, left top, left bottom, color-stop(@start-percent, @start-color), color-stop(@end-percent, @end-color)); 
+        background-image:          -webkit-gradient(linear, left top, left bottom, color-stop(@start-percent, @start-color), color-stop(@end-percent, @end-color));
         background-image:           linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent);
         background-repeat:  repeat-x;
         zoom:               1 !important;
-        -ms-filter:         e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')",argb(@start-color),argb(@end-color)));    
+        -ms-filter:         e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')",argb(@start-color),argb(@end-color)));
         filter:             e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
-    }	
+    }
 
+	.radial-multiple(@color1: #296BAD; @color2: #067AB4; @color3: #056B9E; @color4: #75C5FF; @color5: #75FFFF; @color6: #2c9bdb) {
+		background: @color2;
+		background: 		-webkit-radial-gradient(38.52% 12.89%, circle, @color1, transparent 54%),
+							-webkit-radial-gradient(13.52% 45.79%, circle, @color2, transparent 46%),
+							-webkit-radial-gradient(77.42% 57.24%, circle, @color3, transparent 58%),
+							-webkit-radial-gradient(33.4% 63.99%, circle, @color4, transparent 68%),
+							-webkit-radial-gradient(69.61% 20.85%, circle, @color5, transparent 83%),
+							-webkit-radial-gradient(50% 50%, circle, @color6, @color6 100%);
+		background: 			    radial-gradient(circle at 38.52% 12.89%, @color1, transparent 54%),
+									radial-gradient(circle at 13.52% 45.79%, @color2, transparent 46%),
+									radial-gradient(circle at 77.42% 57.24%, @color3, transparent 58%),
+									radial-gradient(circle at 33.4% 63.99%, @color4, transparent 68%),
+									radial-gradient(circle at 69.61% 20.85%, @color5, transparent 83%),
+									radial-gradient(circle at 50% 50%, @color6, @color6 100%);
+		background-blend-mode: 		normal;
+		background-size: 			cover;									
+	}
 }
