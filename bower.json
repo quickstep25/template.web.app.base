@@ -1,6 +1,6 @@
 {
   "name": "TMP.WEB.APP.BASE",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "authors": [
     "Doug Hill"
   ],
@@ -32,7 +32,7 @@
     "**/_assets"
   ],
   "dependencies": {
-    "font-awesome": "~4.4.0",
+    "font-awesome": "~4.5.0",
     "jquery": "~2.1.4",
     "knockoutjs": "~3.4.0",
     "knockout-projections": "~1.1.0",
