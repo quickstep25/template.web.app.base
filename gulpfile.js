@@ -245,10 +245,14 @@
 	// COMPRESS IMAGES
 	gulp.task('build_images', function () {
 		var pngFilter	= filter('**/*.png', { restore: true });
+		var jgpFilter	= filter('**/*.jpg', { restore: true });
 		return gulp.src(['media/images/**'], { cwd: bases.src })
 			.pipe(pngFilter)
 			.pipe(image())
 			.pipe(pngFilter.restore)
+			.pipe(jgpFilter)
+			.pipe(image())
+			.pipe(jgpFilter.restore)
 			.pipe(gulp.dest(bases.dev + 'media/images/'))
 			.pipe(gulp.dest(bases.prod + 'media/images/'));
 	});
