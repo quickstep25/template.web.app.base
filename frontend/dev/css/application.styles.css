@@ -2381,6 +2381,10 @@ body {
     line-height: 48px;
   }
 }
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
 .component-page-template {
   position: relative;
   width: 100%;

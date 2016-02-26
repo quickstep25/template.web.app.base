@@ -27,7 +27,7 @@
 		less	= require('gulp-less'),
 		image	= require('gulp-imagemin'),
 		md		= require('gulp-markdown'),
-		css		= require('gulp-minify-css'),
+		css		= require('gulp-cssnano'),
 		rehtml	= require('gulp-html-replace'),
 		rjs		= require('gulp-requirejs-bundler'),
 		rmd		= require('gulp-remove-markdown'),
