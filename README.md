@@ -1,9 +1,6 @@
 [![Build Status][TRAVISIMG]][TRAVISLINK] [![Dependency Status](https://gemnasium.com/quickstep25/template.web.app.base.svg)](https://gemnasium.com/quickstep25/template.web.app.base)
 
 ----------
-![Demonstration Image](http://quickstep25.github.io/template.web.app.base/media/images/demo/screenshot.png)
-
-----------
 
 ##<i class="icon-file"></i> Web Application Template - Baseline Model
 This project is built with Node.js and incorporates the usage of a variety of modules and plugins to form an application file / directory structure and process streaming workflow as a starting point for a new web application.
@@ -157,7 +154,6 @@ These application software files (the "Software") are licensed under the Open So
 [GHLICLINK]: https://raw.githubusercontent.com/quickstep25/template.web.app.base/master/LICENSE
 [GHRELLINK]: https://github.com/quickstep25/template.web.app.base/releases
 
-[DEMOIMG]: http://quickstep25.github.io/template.web.app.base/media/images/demo/screenshot.png
 [TRAVISIMG]: https://travis-ci.org/quickstep25/template.web.app.base.svg?branch=master 
 [GHLICIMG]: https://img.shields.io/github/license/quickstep25/template.web.app.base.svg
 [GHRELIMG]: https://img.shields.io/github/release/quickstep25/template.web.app.base.svg
