@@ -16,7 +16,7 @@ mixin favicons(path, ...sizes)
 
 //- MIXIN - CHROME ANDROID ICONS
 mixin favicons_android(path, ...sizes)
-	link(rel="manifest", href=path + 'manifest.json')
+	link(rel='manifest', href='manifest.json')
 	each size in sizes
 		link(rel='icon', type='image/png', href=path + 'android-chrome-' + size + 'x' + size + '.png', sizes=size + 'x' + size)
 

@@ -237,15 +237,15 @@
 	//////////////////////////////////////////////////////////////////////////////
 
 	// COPY FILES - FLAT FILES
-	gulp.task('build_misc', function () {
-		return gulp.src(['apache/.htaccess', 'xml/*.xml'], { cwd: bases.src })
+	gulp.task('build_srv_config', function () {
+		return gulp.src(['apache/**/.htacesss', 'xml/**/*.xml', 'manifest/**/*.json'], { cwd: bases.src })
 			.pipe(gulp.dest(bases.dev))
 			.pipe(gulp.dest(bases.prod));
 	});
 	// COMPRESS IMAGES
 	gulp.task('build_images', function () {
-		var pngFilter	= filter('**/*.png', { restore: true });
-		var jgpFilter	= filter('**/*.jpg', { restore: true });
+		var pngFilter	= filter('**/*.png', { restore: true }),
+			jgpFilter	= filter('**/*.jpg', { restore: true });
 		return gulp.src(['media/images/**'], { cwd: bases.src })
 			.pipe(pngFilter)
 			.pipe(image())
@@ -311,7 +311,7 @@
 			.pipe(gulp.dest(bases.prod + 'js/'));
 	});
 	// WRAPPER - BUILD
-	gulp.task('build', ['build_images', 'build_html', 'build_misc', 'build_css', 'build_js'], function (cb) {
+	gulp.task('build', ['build_images', 'build_html', 'build_srv_config', 'build_css', 'build_js'], function (cb) {
 		cb();
 		util.log('STATUS:   All Builds Complete!');
 		return util.log('INFO:     - use the \'' + chalk.cyan('gulp watch') + '\' command to process files automatically when modified -');
@@ -328,7 +328,7 @@
 	// WATCH FILES
 	gulp.task('watch', function (cb) {
 		// WATCH FOR FILE CHANGES AND RUN A GULP TASK IF A CHANGE OCCURS
-		gulp.watch(['apache/**/.htacesss', 'xml/**/*.xml'], { cwd: bases.src }, ['build_misc']);
+		gulp.watch(['apache/**/.htacesss', 'xml/**/*.xml', 'manifest/**/*.json'], { cwd: bases.src }, ['build_srv_config']);
 		gulp.watch(['md/**/*.md'], { cwd: bases.src }, ['build_html']);
 		gulp.watch(['jade/**/*.jade'], { cwd: bases.src }, ['build_html']);
 		gulp.watch(['less/**/*.less'], { cwd: bases.src }, ['build_css']);
