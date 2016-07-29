@@ -2,7 +2,7 @@
 var require = {
 
 	baseUrl	: './js/',
-	
+
 	paths		: {
 		'jquery'				: 'modules/jquery/jquery',
 		'velocity'              : 'modules/velocity/velocity',
@@ -24,8 +24,8 @@ var require = {
 		},
 
 		'google.analytics'	: {
-			exports			: 'ga'
-		},		
+			exports			: '__ga__'
+		},
 
 		'velocity'		: {
 			deps			: ['jquery'],
