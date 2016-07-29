@@ -1,37 +1,59 @@
 // VENDOR PREFIXES
 
+// FONT SMOOTHING
+.font-smooth() {
+			 font-smoothing:		subpixel-antialiased;
+	 -webkit-font-smoothing:		subpixel-antialiased;
+	 -moz-os-font-smoothing:		subpixel-antialiased;
+	 		 text-rendering:		auto;
+}
+
+// KEYFRAMES
+.keyframes(@name; @arguments) {
+	@-moz-keyframes 				@name { @arguments(); }
+	@-webkit-keyframes 				@name { @arguments(); }
+	@keyframes 						@name { @arguments(); }
+}
+
+// ANIMATION
+.animation(@animation) {
+	-webkit-animation:				@animation;
+	     -o-animation:				@animation;
+	        animation:				@animation;
+}
+
 //  BOX SIZING
 .box-sizing(@boxmodel) {
-  -webkit-box-sizing: @boxmodel;
-     -moz-box-sizing: @boxmodel;
-          box-sizing: @boxmodel;
+  -webkit-box-sizing: 				@boxmodel;
+     -moz-box-sizing: 				@boxmodel;
+          box-sizing: 				@boxmodel;
 }
 
 // TRANSITIONS
 .transition(@transition) {
-  -webkit-transition: @transition;
-       -o-transition: @transition;
-          transition: @transition;
+  -webkit-transition: 				@transition;
+       -o-transition: 				@transition;
+          transition: 				@transition;
 }
 
 // TRANSFORM
 .translate(@x; @y) {
-  -webkit-transform: translate(@x, @y);
-      -ms-transform: translate(@x, @y);
-       -o-transform: translate(@x, @y);
-          transform: translate(@x, @y);
+  -webkit-transform: 				translate(@x, @y);
+      -ms-transform: 				translate(@x, @y);
+       -o-transform: 				translate(@x, @y);
+          transform: 				translate(@x, @y);
 }
 // PREVENT COPY TEXT
 .user-select(@arguments) {
-  -webkit-user-select: @arguments;
-   -khtml-user-select: @arguments;
-     -moz-user-select: @arguments;
-          user-select: @arguments;
+  -webkit-user-select: 				@arguments;
+   -khtml-user-select: 				@arguments;
+     -moz-user-select: 				@arguments;
+          user-select: 				@arguments;
 }
 // OPACITY
 .opacity(@opacity) {
-  opacity: 				@opacity;
+  opacity: 							@opacity;
   // IE8
-  @opacity-ie: 			(@opacity * 100);
-  filter: 				~"alpha(opacity=@{opacity-ie})";
+  @opacity-ie: 						(@opacity * 100);
+  filter: 							~"alpha(opacity=@{opacity-ie})";
 }

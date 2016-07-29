@@ -1,8 +1,7 @@
 // LARGE SCREEN
 
 @media (min-width: @screen-lg-min) {
-
-	.component-page-template {
+	.page-template {
 
 		.content-box {
 			// max-width: 								520px;
@@ -12,33 +11,10 @@
 			// WILL CHANGE ALL ELEMENTS WITH THOSE STYLES MAKING THE CLASS NOT REALLY REUSABLE - NOT RECOMMENDED
 			// BEST TO USE  IN THE COMPONENT STYLESHEET SO THE EFFECT IS LOCALIZED
 			// DESIGING FOR MOBILE FIRST AS THE DEFAULT STYLE / LAYOUT, RESPONSIVE / CENTERING SETTINGS DONT REALLY APPLY SINCE APP WILL TAKE UP VIEWPORT
-			&.center-responsive {
+			&.center-responsive {}
 
-			}
-
-			.content-header {
-
-					h1, h2, h3, h4, h5, h6 {}
-
-					p {}
-
-				.header-box {}
-
-				.title {
-				}
-
-				.subtitle {
-				}
-
-				.promo {}
-			}
-			.content-body {
-
-				.body-box {
-
-					p {}
-				}
-			}
+			.content-header {}
+			.content-body {}
 		}
 	}
 }

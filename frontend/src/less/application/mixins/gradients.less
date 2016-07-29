@@ -71,13 +71,13 @@
         background-repeat:  repeat-x;
         zoom:               1 !important;
         -ms-filter:         e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')",argb(@start-color),argb(@end-color)));
-        filter:             e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
+        filter:				e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color)));
     }
 
 	.radial-multiple(@color1: #296BAD; @color2: #067AB4; @color3: #056B9E; @color4: #75C5FF; @color5: #75FFFF; @color6: #2c9bdb) {
 		background: @color2;
 		background: 		-webkit-radial-gradient(38.52% 12.89%, circle, @color1, transparent 54%),
-							-webkit-radial-gradient(13.52% 45.79%, circle, @color2, transparent 46%),
+							-webkit-radial-gradient(13.52% 45.79%, circle, @color2, transparent 46%)
 							-webkit-radial-gradient(77.42% 57.24%, circle, @color3, transparent 58%),
 							-webkit-radial-gradient(33.4% 63.99%, circle, @color4, transparent 68%),
 							-webkit-radial-gradient(69.61% 20.85%, circle, @color5, transparent 83%),
@@ -89,6 +89,35 @@
 									radial-gradient(circle at 69.61% 20.85%, @color5, transparent 83%),
 									radial-gradient(circle at 50% 50%, @color6, @color6 100%);
 		background-blend-mode: 		normal;
-		background-size: 			cover;									
+		background-size: 			cover;
 	}
+
+	.radial-gradient(@hliteColor: @white; @hlPos: 0%; @baseColor: @black; @basePos: 50%; @shape: circle; @size: farthest-corner; @PosX: 30%; @PosY: 35%) {
+		background: 					@baseColor;
+		background: 		  -moz-radial-gradient(@PosX @PosY, @shape @size, @baseColor @basePos, @hliteColor @hlPos);
+		background:		   -webkit-radial-gradient(@PosX @PosY, @shape @size, @baseColor @basePos, @hliteColor @hlPos);
+		background:			    -o-radial-gradient(@PosX @PosY, @shape @size, @baseColor @basePos, @hliteColor @hlPos);
+		background:			   -ms-radial-gradient(@PosX @PosY, @shape @size, @baseColor @basePos, @hliteColor @hlPos);
+		background:				   radial-gradient(@shape @size at @PosX @PosY, @hliteColor @hlPos, @baseColor @basePos);
+		background-repeat:				  no-repeat;
+	}
+
+	.top-spotlight(@color1: lighten(@gray, 22%); @color2: @gray; @posX: 50%; @posY: 0%; @sizeX: 80%; @sizeY: 120%) {
+
+		background:			@color1;
+		background:				   -webkit-gradient(radial, @posX @posY, 0, @sizeX @sizeY, 200, from(@color2), to(@color1));
+		background:			-webkit-radial-gradient(@posX @posY, @sizeX @sizeY, @color1, @color2);
+		background:			   -moz-radial-gradient(@posX @posY, @sizeX @sizeY, @color1, @color2);
+		background:			    -ms-radial-gradient(@posX @posY, @sizeX @sizeY, @color1, @color2);
+		background:			        radial-gradient(ellipse @sizeX @sizeY at @posX @posY, @color1, @color2);
+		background-repeat: 				no-repeat;
+	}
+	.striped-box(@color1: @gray-light; @amt1: 10px; @color2: @gray; @amt2: 20px; @angle: 45deg) {
+		background: 		-webkit-repeating-linear-gradient(@angle, @color1, @color1 @amt1, @color2 @amt1, @color2 @amt2);
+		background: 		   -moz-repeating-linear-gradient(bottom right, @color1, @color1 @amt1, @color2 @amt1, @color2 @amt2);
+		background: 			 -o-repeating-linear-gradient(@angle, @color1, @color1 @amt1, @color2 @amt1, @color2 @amt2);
+		background: 				repeating-linear-gradient(@angle, @color1, @color1 @amt1, @color2 @amt1, @color2 @amt2);
+		zoom: 1;
+		filter:			e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@color1),argb(@color2)));
+  }
 }
