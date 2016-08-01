@@ -211,12 +211,29 @@
 	//////////////////////////////////////////////////////////////////////////////
 
 	// COMPILE - JADE - KNOCKOUT COMPONENTS
-	gulp.task('process_jade_components', function () {
-		return gulp.src(['jade/templates/**/*.jade'], { cwd: bases.src })
+	gulp.task('process_jade_pages', function () {
+		return gulp.src(['jade/pages/**/*.jade', '!jade/pages/**/index.jade'], { cwd: bases.src })
 			.pipe(jade({ pretty	: true })
 				.on('error', util.log))
-			.pipe(gulp.dest(bases.dev + 'js/'));
+			.pipe(gulp.dest(bases.dev + 'js/pages'));
 	});
+
+	// COMPILE - JADE - KNOCKOUT COMPONENTS
+	gulp.task('process_jade_components', function () {
+		return gulp.src(['jade/components/**/*.jade'], { cwd: bases.src })
+			.pipe(jade({ pretty	: true })
+				.on('error', util.log))
+			.pipe(gulp.dest(bases.dev + 'js/components'));
+	});
+
+	// COMPILE - JADE - KNOCKOUT COMPONENTS
+	gulp.task('process_jade_includes', function () {
+		return gulp.src(['jade/includes/**/*.jade'], { cwd: bases.src })
+			.pipe(jade({ pretty	: true })
+				.on('error', util.log))
+			.pipe(gulp.dest(bases.dev + 'js/includes'));
+	});
+
 	// COMPILE - JADE - HTTP STATUS ERROR PAGES
 	gulp.task('process_jade_error', function () {
 		return gulp.src(['jade/http.error/*.jade'], { cwd: bases.src })
@@ -227,7 +244,7 @@
 	});
 	// COMPILE - JADE - CORE INDEX HTML
 	gulp.task('process_jade_index', function () {
-		return gulp.src(['jade/index/index.jade'], { cwd: bases.src })
+		return gulp.src(['jade/pages/index/index.jade'], { cwd: bases.src })
 			.pipe(jade({ pretty	: true })
 				.on('error', util.log))
 			.pipe(gulp.dest(bases.dev));
@@ -263,7 +280,7 @@
 			.pipe(gulp.dest(bases.prod + 'css/'));
 	});
 	// FIX HTML PATHS FOR OPTIMIZED SCRIPTS - ONLY ON DIST
-	gulp.task('build_html', ['process_jade_index', 'process_jade_error', 'process_jade_components', 'process_md'], function () {
+	gulp.task('build_html', ['process_jade_index', 'process_jade_error', 'process_jade_pages', 'process_jade_components', 'process_jade_includes', 'process_md'], function () {
 		return gulp.src('./index.html', { cwd: bases.dev })
 			.pipe(rehtml({
 				'optimize_js'	: 'js/application.scripts.js'
@@ -292,7 +309,7 @@
 				// LIST KNOCKOUT COMPONENTS AND PAGES HERE
 				include			: [
 					'requireLib',
-					'components/template/template'
+					'pages/template/template'
 				],
 				// NOTE THAT INSERTREQUIRE DOES NOT AFFECT OR ADD TO THE MODULES THAT ARE BUILT INTO
 				// THE BUILD BUNDLE. IT JUST ADDS A REQUIRE([]) CALL TO THE END OF THE BUILT FILE FOR

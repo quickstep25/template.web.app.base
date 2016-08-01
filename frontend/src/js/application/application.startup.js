@@ -10,7 +10,7 @@ define(['jquery', 'knockout', 'router'], function ($, ko, router) {
 	ko.components.register('component_name', { require: 'component_path/componentjsfilename' });
 	*/
 
-	ko.components.register('template',	{ require: 'components/template/template' });
+	ko.components.register('template',	{ require: 'pages/template/template' });
 	// COMPONENTS AS NAVIGATION
 	// COMPONENTS AS UTILITY
 	// COMPONENTS AS WIDGETS
@@ -20,7 +20,7 @@ define(['jquery', 'knockout', 'router'], function ($, ko, router) {
 	// COMPONENTS AS REGISTERED PAGES ONLY
 	/* example */
 	/*
-		ko.components.register('template_name', { template: { require: 'text!component_path/componentjsfilename' } });
+		ko.components.register('page_name', { require: 'pages_path/componentjsfilename' });
 	*/
 
 	/**************************************************************************************************/
