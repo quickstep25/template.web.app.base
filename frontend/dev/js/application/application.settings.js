@@ -8,12 +8,10 @@ var require = {
 		'velocity'              : 'modules/velocity/velocity',
 		'velocity.ui'			: 'modules/velocity/velocity.ui',
 		'knockout'				: 'modules/knockout/knockout',
-		'projections'			: 'modules/knockout/knockout.projections',
 		'crossroads'			: 'modules/crossroads/crossroads',
 		'hasher'				: 'modules/hasher/hasher',
 		'signals'				: 'modules/signals/signals',
 		'text'					: 'modules/require/text',
-		'domready'				: 'modules/require/domReady',
 		'router'				: 'application/application.router',
 		'google.analytics'		: 'analytics/google.analytics'
 	},
