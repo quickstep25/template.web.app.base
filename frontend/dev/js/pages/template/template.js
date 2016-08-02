@@ -6,7 +6,7 @@ define(["knockout", "text!./template.html", "google.analytics"], function (ko, t
 	// DEFINE VIEW MODEL
 	var TemplateViewModel = function (params) {
 		this.params			= ko.observable(params);
-		this.componentID	= ko.observable('component-page-' + params.page);
+		this.componentID	= ko.observable('page-' + params.page);
 		this.pageview();
 	};
 
