@@ -1,0 +1,198 @@
+
+# ----------------------------------------------------------------------
+# | CHARACTER SET DEFAULTS                                             |
+# ----------------------------------------------------------------------
+
+AddDefaultCharset UTF-8
+
+# ----------------------------------------------------------------------
+# | SETUP DIRECTORY & DOCUMENT DEFAULTS                                |
+# ----------------------------------------------------------------------
+
+<ifModule mod_dir.c>
+	DirectorySlash Off
+	DirectoryIndex index.html index.htm welcome.html default.html toc.html index.php
+</ifModule>
+
+# ----------------------------------------------------------------------
+# | ERROR DOCUMENTS                                                    |
+# ----------------------------------------------------------------------
+
+ErrorDocument 400 /templates/http.error/status.400.html
+ErrorDocument 401 /templates/http.error/status.401.html
+ErrorDocument 403 /templates/http.error/status.403.html
+ErrorDocument 404 /templates/http.error/status.404.html
+ErrorDocument 500 /templates/http.error/status.500.html
+ErrorDocument 503 /templates/http.error/status.503.html
+ErrorDocument 505 /templates/http.error/status.505.html
+
+# ----------------------------------------------------------------------
+# | ALLOW SYMBOLIC LINKS TO FILE SERVERS                               |
+# ----------------------------------------------------------------------
+
+<ifModule mod_dir.c>
+	Options FollowSymLinks
+	Options SymLinksIfOwnerMatch
+</ifModule>
+
+# ----------------------------------------------------------------------
+# | DISBALE FILE CACHING                                               |
+# ----------------------------------------------------------------------
+
+<ifModule mod_headers.c>
+	Header unset ETag
+	Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+	Header set Pragma "no-cache"
+	Header set Expires "Sun, 01 Jan 2012 00:04:00 GMT"
+	Header set Last-Modified "Sun, 01 Jan 2012 00:00:00 GMT"
+	Header set Access-Control-Allow-Origin "*"
+	Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+</ifModule>
+
+FileETag None
+
+# ----------------------------------------------------------------------
+# | SET / UNSET FILE CACHING                                           |
+# ----------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+	# ACTIVATE AND SET DEFAULTS
+	ExpiresActive on
+	ExpiresDefault                                      "access plus 1 week"
+	# CSS
+	ExpiresByType text/css                              "access plus 1 year"
+	# DATA INTERCHANGE
+	ExpiresByType application/atom+xml                  "access plus 1 hour"
+	ExpiresByType application/rdf+xml                   "access plus 1 hour"
+	ExpiresByType application/rss+xml                   "access plus 1 hour"
+	ExpiresByType application/json                      "access plus 0 seconds"
+	ExpiresByType application/ld+json                   "access plus 0 seconds"
+	ExpiresByType application/schema+json               "access plus 0 seconds"
+	ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
+	ExpiresByType application/xml                       "access plus 0 seconds"
+	ExpiresByType text/xml                              "access plus 0 seconds"
+	# FAVICON
+	ExpiresByType image/vnd.microsoft.icon              "access plus 1 day"
+	ExpiresByType image/x-icon                          "access plus 1 day"
+	# MARKUP
+	ExpiresByType text/html                             "access plus 0 seconds"
+	ExpiresByType text/cfml                             "access plus 0 seconds"
+	ExpiresByType text/php                              "access plus 0 seconds"
+	# JAVASCRIPT
+	ExpiresByType application/javascript                "access plus 0 seconds"
+	ExpiresByType application/x-javascript              "access plus 0 seconds"
+	ExpiresByType text/javascript                       "access plus 0 seconds"
+	# MANIFEST
+	ExpiresByType application/manifest+json             "access plus 1 day"
+	ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+	ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+	# MEDIA
+	ExpiresByType audio/ogg                             "access plus 1 week"
+	ExpiresByType image/bmp                             "access plus 1 week"
+	ExpiresByType image/gif                             "access plus 1 week"
+	ExpiresByType image/jpeg                            "access plus 1 week"
+	ExpiresByType image/png                             "access plus 1 week"
+	ExpiresByType image/svg+xml                         "access plus 1 week"
+	ExpiresByType image/webp                            "access plus 1 week"
+	ExpiresByType video/mp4                             "access plus 1 week"
+	ExpiresByType video/ogg                             "access plus 1 week"
+	ExpiresByType video/webm                            "access plus 1 week"
+	# WEB FONTS
+	ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+	ExpiresByType font/eot                              "access plus 1 month"
+	ExpiresByType font/opentype                         "access plus 1 month"
+	ExpiresByType application/x-font-ttf                "access plus 1 month"
+	ExpiresByType application/font-woff                 "access plus 1 month"
+	ExpiresByType application/x-font-woff               "access plus 1 month"
+	ExpiresByType font/woff                             "access plus 1 month"
+	ExpiresByType application/font-woff2                "access plus 1 month"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | REDIRECT FAVICON REQUESTS                                          |
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+	RewriteRule ^/favicon\.ico$ /media/images/favicons/favicon.ico
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | ENABLE FILE COMPRESSION GZIP - HTML, CSS, JS, TXT, XML, FONTS      |
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE application/javascript
+	AddOutputFilterByType DEFLATE application/rss+xml
+	AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+	AddOutputFilterByType DEFLATE application/x-font
+	AddOutputFilterByType DEFLATE application/x-font-opentype
+	AddOutputFilterByType DEFLATE application/x-font-otf
+	AddOutputFilterByType DEFLATE application/x-font-truetype
+	AddOutputFilterByType DEFLATE application/x-font-ttf
+	AddOutputFilterByType DEFLATE application/x-javascript
+	AddOutputFilterByType DEFLATE application/xhtml+xml
+	AddOutputFilterByType DEFLATE application/xml
+	AddOutputFilterByType DEFLATE font/opentype
+	AddOutputFilterByType DEFLATE font/otf
+	AddOutputFilterByType DEFLATE font/ttf
+	AddOutputFilterByType DEFLATE image/svg+xml
+	AddOutputFilterByType DEFLATE image/x-icon
+	AddOutputFilterByType DEFLATE text/css
+	AddOutputFilterByType DEFLATE text/html
+	AddOutputFilterByType DEFLATE text/javascript
+	AddOutputFilterByType DEFLATE text/plain
+	AddOutputFilterByType DEFLATE text/xml
+
+	BrowserMatch ^Mozilla/4 gzip-only-text/html
+	BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+	Header append Vary User-Agent
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | MIME TYPE SETTINGS                                                 |
+# ----------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+	# DATA INTERCHANGE
+	AddType application/atom+xml                        atom
+	AddType application/json                            json map topojson
+	AddType application/ld+json                         jsonld
+	AddType application/rss+xml                         rss
+	AddType application/vnd.geo+json                    geojson
+	AddType application/xml                             rdf xml
+	# JAVASCRIPT
+	AddType application/javascript                      js
+	# MANIFEST FILES
+	AddType application/manifest+json                   webmanifest
+	AddType application/x-web-app-manifest+json         webapp
+	AddType text/cache-manifest                         appcache
+	# MEDIA
+	AddType audio/mp4                                   f4a f4b m4a
+	AddType audio/ogg                                   oga ogg opus
+	AddType image/bmp                                   bmp
+	AddType image/svg+xml                               svg svgz
+	AddType image/webp                                  webp
+	AddType video/mp4                                   f4v f4p m4v mp4
+	AddType video/ogg                                   ogv
+	AddType video/webm                                  webm
+	AddType video/x-flv                                 flv
+	AddType image/x-icon                                cur ico
+	# WEB FONTS
+	AddType application/font-woff                       woff
+	AddType application/font-woff2                      woff2
+	AddType application/vnd.ms-fontobject               eot
+	AddType application/x-font-ttf                      ttc ttf
+	AddType font/opentype                               otf
+	# OTHER
+	AddType application/octet-stream                    safariextz
+	AddType application/x-bb-appworld                   bbaw
+	AddType application/x-chrome-extension              crx
+	AddType application/x-opera-extension               oex
+	AddType application/x-xpinstall                     xpi
+	AddType text/vcard                                  vcard vcf
+	AddType text/vnd.rim.location.xloc                  xloc
+	AddType text/vtt                                    vtt
+	AddType text/x-component                            htc
+</IfModule>

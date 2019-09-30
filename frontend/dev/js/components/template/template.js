@@ -1,12 +1,11 @@
-/*global ga, define, console*/
-/*jslint nomen: true */
-define(["knockout", "text!./template.html", "google.analytics"], function (ko, templateHTML, __ga__) {
+/*global define, console*/
+define(["knockout", "text!./template.html", "google.analytics"], function (ko, templateHTML, ga) {
 	"use strict";
 
 	// DEFINE VIEW MODEL
 	var TemplateViewModel = function (params) {
 		this.params			= ko.observable(params);
-		this.componentID	= ko.observable('page-' + params.page);
+		this.componentID	= ko.observable('component-page-' + params.page);
 		this.pageview();
 	};
 
@@ -25,7 +24,7 @@ define(["knockout", "text!./template.html", "google.analytics"], function (ko, t
 				page: 'index',
 				title: 'Web Application Template'
 			});
-			return ga('send', 'pageview');
+			ga('send', 'pageview');
 		}
 	});
 
@@ -35,4 +34,3 @@ define(["knockout", "text!./template.html", "google.analytics"], function (ko, t
 	return { viewModel: TemplateViewModel, template: templateHTML };
 
 });
-/*jslint nomen: false */
