@@ -1,6 +1,6 @@
 ---
-template: Bug Report
-description: Report errors, issues, and unexpected behavior.
+name: Bug Report
+about: Report errors, issues, and unexpected behavior.
 title: [BUG]
 featureID: 
 labels: ''
