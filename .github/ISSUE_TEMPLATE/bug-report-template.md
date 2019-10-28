@@ -1,38 +1,49 @@
 ---
-name: Bug Report
-about: Create a report to help us improve
-title: ''
+template: Bug Report
+description: Report errors, issues, and unexpected behavior.
+title: [BUG]
+featureID: 
 labels: ''
-assignees: quickstep25
+assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+<!--
+BEFORE POSTING YOUR ISSUE:
+- These comments won't show up when you submit the issue.
+- Please use the sections below to provide information about the issue.
+- Be specific: Add as much detail as possible.
+-->
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+### Before Submitting a Bug
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+- [ ] Check the documentation on Reporting Issues
+- [ ] Read the Contribution Guide
+- [ ] Identify the correct project area to report issue.
+- [ ] Check to see if bug is known issue.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+<!-- BEFORE SUBMITTING A NEW ISSUE, PLEASE READ THE REPORTING ISSUES DOCUMENTATION! -->
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+## Issue Description
+<!-- I am experiencing a problem with... -->
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+## Environment
+<!-- Provide details about your environment: what editor, browser, and other software you are using and any other specifics to your setup -->
 
-**Additional context**
-Add any other context about the problem here.
+## Steps to Reproduce
+<!-- Provide an unambiguous set of steps to reproduce this bug. Include code to reproduce, if relevant. Include a live link if available. -->
+
+1. 
+2. 
+3. 
+4. 
+
+## Expected Behavior
+
+<!-- -- Description of what *should* be happening -->
+
+## Actual Behavior
+
+<!-- Description of what actually happens -->
+
+## Attached Screenshots / Video
